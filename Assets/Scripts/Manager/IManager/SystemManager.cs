@@ -12,11 +12,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SystemManager : DontDestroySingleton<SystemManager>
 {
-	private IManager curManager;
-	private IManager targetScene;
-	private Dictionary<Type, IManager> sceneDictionary = new Dictionary<Type, IManager>();
+	private Manager curManager;
+	private Manager targetScene;
+	private Dictionary<Type, Manager> sceneDictionary = new Dictionary<Type, Manager>();
 
-	public IManager TargetScene => targetScene;
+	public Manager TargetScene => targetScene;
 
 	protected override void Init()
 	{
@@ -31,7 +31,7 @@ public class SystemManager : DontDestroySingleton<SystemManager>
 		curManager?.Update();
 	}
 
-	public async UniTaskVoid ChangeScene<T>() where T : IManager
+	public async UniTaskVoid ChangeScene<T>() where T : Manager
 	{
 		// 현재 씬 종료
 		curManager.Realease();
@@ -87,7 +87,7 @@ public class SystemManager : DontDestroySingleton<SystemManager>
 				return;
 			}
 
-			var iManager = obj as IManager;
+			var iManager = obj as Manager;
 			try
 			{
 				sceneDictionary.TryAdd(iManager.GetType(), iManager);

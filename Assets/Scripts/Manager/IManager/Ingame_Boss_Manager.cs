@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Ingame_Boss_Manager : IManager
+public class Ingame_Boss_Manager : Manager
 {
 	public override void Enter()
 	{

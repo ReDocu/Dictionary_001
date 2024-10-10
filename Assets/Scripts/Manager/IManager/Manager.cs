@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// 각 씬을 관리할 매니저 추상 클래스
 /// </summary>
-public abstract class IManager
+public abstract class Manager
 {
 	public int testSceneChangeTime = 2;
 	public float testElaspedTime = 0;
@@ -27,7 +27,7 @@ public abstract class IManager
 		await FadeManager.Instance.FadeOut();
 		isLoadComplete = true;
 	}
-	protected void ChangeState<T>() where T : IManager
+	protected void ChangeState<T>() where T : Manager
 	{
 		SystemManager.Instance.ChangeScene<T>();
 	}

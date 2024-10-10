@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Title_Manager : IManager
+public class Title_Manager : Manager
 {
 	public override void Enter()
 	{

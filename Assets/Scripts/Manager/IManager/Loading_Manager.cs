@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Loading_Manager : IManager
+public class Loading_Manager : Manager
 {
     public override void Enter()
     {
